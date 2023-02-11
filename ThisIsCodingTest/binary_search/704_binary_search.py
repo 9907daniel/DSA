@@ -1,6 +1,5 @@
 class Solution:
     def search(self, nums: list[int], target: int) -> int:
-
         lb = 0
         up = len(nums)-1
 
