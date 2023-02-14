@@ -1,17 +1,26 @@
-import heapq
 
-minHeap = []
-heapq.heappush(minHeap,3)
-heapq.heappush(minHeap,2)
-heapq.heappush(minHeap,4)
+l = [[],[],[]]
 
-print(minHeap)
-# [2,3,4]
-# Min is always at index 0
-# minHeap[0] = 2
+print(l)
 
-while len(minHeap):
-    print(heapq.heappop(minHeap))
+l[0].append(1)
+print(l)
+
+
+# import heapq
+
+# minHeap = []
+# heapq.heappush(minHeap,3)
+# heapq.heappush(minHeap,2)
+# heapq.heappush(minHeap,4)
+
+# print(minHeap)
+# # [2,3,4]
+# # Min is always at index 0
+# # minHeap[0] = 2
+
+# while len(minHeap):
+#     print(heapq.heappop(minHeap))
 # 2
 # 3
 # 4
