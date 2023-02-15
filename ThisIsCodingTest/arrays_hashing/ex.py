@@ -6,6 +6,15 @@ print(l)
 l[0].append(1)
 print(l)
 
+count = [0]*26
+print(count)
+
+
+asd = [1,3123,4,23,23,1]
+
+sorted(asd)
+print(asd)
+print(sorted(asd))
 
 # import heapq
 
