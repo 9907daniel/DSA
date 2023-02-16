@@ -9,6 +9,8 @@
 #         self.next = next
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        
+        # Solving using Brute Linked List
         while head != None:
             if head.next == None:
                 return True
@@ -25,3 +27,19 @@ class Solution:
                 return False
         return True
             
+
+        # Using Normal List       
+        while head != None:
+            l.append(head.val)
+            head = head.next
+        
+        start = 0
+        end = len(l)-1
+
+        while start <= end:
+            if l[start] == l[end]:
+                start += 1
+                end -= 1
+            else:
+                return False
+        return True
