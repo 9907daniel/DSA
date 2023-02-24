@@ -11,22 +11,45 @@ class Solution:
         l = []
 
         nums.sort()
+        for a in range(len(nums)):
+            b = a+1
+            c = len(nums)-1
 
-        while (a is not c-2):
-            print(a, b, c)
-            if nums[a]+nums[b]+nums[c] ==0:
-                if [nums[a], nums[b], nums[c]] not in l: 
-                    l.append([nums[a], nums[b], nums[c]])
-                c -= 1
-            elif b == c-1:
-                a += 1
-                b = a+1
-            else:
-                b += 1
+            while b < c:
+                if nums[b]+nums[c]+nums[a] < 0:
+                    b +=1
+                elif nums[b]+nums[c]+nums[a] > 0:
+                    c -=1
+                elif nums[b]+nums[c]+nums[a] == 0:
+                    if [nums[a],nums[b],nums[c]] not in l:
+                        l.append([nums[a],nums[b],nums[c]])
+                    b +=1
+                    c -=1
+        return l        
+        
+        
+        # a = 0
+        # b = 1
+        # c = len(nums)-1
+        # l = []
 
-        if a == b-1 and a == c-2:
-            if nums[a]+nums[b]+nums[c] ==0:
-                if [nums[a], nums[b], nums[c]] not in l:
-                    l.append([nums[a], nums[b], nums[c]])
+        # nums.sort()
 
-        return l
+        # while (a is not c-2):
+        #     print(a, b, c)
+        #     if nums[a]+nums[b]+nums[c] ==0:
+        #         if [nums[a], nums[b], nums[c]] not in l: 
+        #             l.append([nums[a], nums[b], nums[c]])
+        #         c -= 1
+        #     elif b == c-1:
+        #         a += 1
+        #         b = a+1
+        #     else:
+        #         b += 1
+
+        # if a == b-1 and a == c-2:
+        #     if nums[a]+nums[b]+nums[c] ==0:
+        #         if [nums[a], nums[b], nums[c]] not in l:
+        #             l.append([nums[a], nums[b], nums[c]])
+
+        # return l
