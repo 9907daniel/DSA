@@ -10,7 +10,7 @@ tmp = []
 
 count = 1
 tmp = s[0][1]
-for a in range(len(s)):
+for a in range(1,n):
     if s[a][0] >= tmp:
         count += 1
         tmp = s[a][1]
