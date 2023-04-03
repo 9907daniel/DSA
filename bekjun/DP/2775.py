@@ -1,5 +1,5 @@
 num = int(input())
-d = []*(num+1)
+d = [[1]]*(num+1)
 
 for a in range(num):
     k = int(input())
