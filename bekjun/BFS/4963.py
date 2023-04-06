@@ -10,37 +10,34 @@ def bfs(graph, x, y, n, m):
     while queue:
         a,b = queue.popleft()
         for i in range(8):
-            nx = dx[i] + x
-            ny = dy[i] +y
+            nx = dx[i] + a
+            ny = dy[i] + b
             
             if 0<=nx<n and 0<=ny<m:
-                queue.append((nx,ny))
                 if graph[nx][ny] == 1:
+                    queue.append((nx,ny))
                     graph[nx][ny] = 0
                       
 tmp = []
-
 while True:
-    y,x = map(int, input().split())
+    m,n = map(int, input().split())
+    
+    if m == 0 and n == 0:
+        break
+    
     graph = []
     count = 0
     
-    if x == 0 and y == 0:
-        break
-    else:
-        for a in range(x):
-            graph.append(list(map(int, input().split())))
-    # graph = [list(map(int, input().strip().split())) for _ in range(x)]
+    for _ in range(n):
+        graph.append(list(map(int, input().split())))
             
-    for a in range(x):
-        for b in range(y):
+    for a in range(n):
+        for b in range(m):
             if graph[a][b] == 1:
-                bfs(graph, 0, 0, a, b)
+                bfs(graph, a, b, n, m)
                 count +=1
     
     tmp.append(count)
-
-            
     
 for a in tmp:
     print(a)
