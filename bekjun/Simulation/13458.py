@@ -3,14 +3,19 @@ l = list(map(int, input().split()))
 B, C = map(int, input().split())
 
 count = 0
+tmp = []
+for a in l:
+    a -= B
+    if a < C:
+        count = 2
+    elif a%C == 0:
+        count = (a//C)+1
+    else:
+        count = (a//C)+2
+    tmp.append(count)
+    
+print (sum(tmp))
+    
 
-for a in range(len(l)):
-    if B > C:
-        count += 1
-        l[a] -= B    
-    while l[a] > 0:
-        count += 1
-        l[a] -= C
 
-print(count)
             

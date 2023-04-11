@@ -1,21 +1,20 @@
-num = int(input())
-d = [[1]]*(num+1)
+T = int(input())
+d = [[n+1 for n in range(14)]]
+for i in range(14):
+    d.append([0]*14)
 
-for a in range(num):
+for a in range(1,15):
+    for b in range(14):
+        if b == 0:
+            d[a][b] = d[a-1][b]
+        else:
+            d[a][b] = d[a-1][b] + d[a][b-1]
+
+tmp = []
+for a in range(T):
     k = int(input())
     n = int(input())
-    d[k] = [[0]*n]      
+    tmp.append(d[k][n-1])
 
-print(d)
-    
-    
-    
-
-
-# d[0] = [1]*n
-
-
-# for a in range(1, k+1):
-#     for b in range(1,n+1):
-#         d[a][b] = sum(d[a-1][:b])
-        
+for a in tmp:
+    print(a)
