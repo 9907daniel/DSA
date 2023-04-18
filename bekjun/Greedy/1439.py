@@ -8,8 +8,6 @@ while a != (len(l)) and len(l) > 1:
     else:
         a += 1
 
-# print(l)
-
 count = 0
 for a in l:
     if a == 0:
