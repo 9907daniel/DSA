@@ -1,3 +1,6 @@
+import sys
+sys.setrecursionlimit(10000)
+
 m, n, k= map(int, input().split())
 
 graph = [[0]*n for _ in range(m)]
@@ -17,6 +20,24 @@ for a in range(len(square)):
 
 
 size = 1
+# def dfs(x,y):
+#     global size
+#     stack = [(x,y)]
+#     graph[x][y] = 1
+    
+#     while stack:
+#         x, y = stack.pop()
+#         for a in range(4):
+#             nx = dx[a] + x
+#             ny = dy[a] + y
+            
+#             if 0<=nx<m and 0<=ny<n and graph[nx][ny] == 0:            
+#                 size += 1
+#                 graph[nx][ny] = 1
+#                 stack.append((nx,ny))
+#                 # dfs(nx,ny)
+#     return size
+
 def dfs(x,y):
     global size
     graph[x][y] = 1
