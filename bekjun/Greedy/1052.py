@@ -1,21 +1,32 @@
+import heapq
+
 n, k = map(int,input().split())
 
-tmp = 1
 
-# while tmp < k:
-#     tmp = tmp * 2
-
+# l = []
+# heapq.heapify(l)
 # for a in range(n):
-    
-d = [1]*n
-    
-while True:
-    for a in d:
-        if a in d:
-            d.pop(a)
-            d.pop(a)
-            d.append(2*a)
-    
 
+l = [1 for _ in range(n)]
+
+while count > k:
+    count = 0
+    for a in l:
+        if a != 0:
+            count += 1
+            
+    for a in range(len(l)):
+        for b in range(len(l)):
+            if l[a] == l[b]:
+                l[a] = l[a] + l[b]
+                l[b] = 0
+                break
+        # if l[a]
+        
+        
+
+
+
+    
 
     
